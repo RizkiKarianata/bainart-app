@@ -1,11 +1,14 @@
-# CRUD Framework7
-Aplikasi CRUD Sederhana Berbasis Mobile yang menggunakan Framework7 berguna untuk teman - teman yang baru belajar mobile menggunakan Framework7
+# MyBatik
+Aplikasi MyBatik Berbasis Mobile menggunakan Framework7 merupakan aplikasi yang berguna untuk mengetahui info menarik tentang batik - batik yang ada di seluruh wilayah Indonesia.
 
 # Usage
 * Install Node.js
-* Buka direktori Zodiak Weton di Command Prompt
+* Buka direktori MyBatik di Command Prompt
 * Ketik npm start
 * Otomatis terbuka localhost:8080
+
+# App Image
+![Alt text](https://karianata.com/framework7/mybatik_1.png)
 
 ## Framework7 CLI Options
 
