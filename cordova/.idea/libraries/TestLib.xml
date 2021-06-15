@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="TestLib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/node_modules/cordova-android/spec/fixtures/org.test.plugins.dummyplugin/src/android/TestLib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,113 @@
+<template>
+	<div class="page">
+		<div class="navbar">
+			<div class="navbar-inner sliding navbar-pages">
+				<div class="left">
+					<a href="#" class="link back">
+						<i class="fa fa-arrow-left"></i>
+					</a>
+				</div>
+				<div class="title"><h4>Batik Terbaru</h4></div>
+			</div>
+		</div>
+		<div class="page-content">
+			<div class="product product-home popular-product segments-page">
+				<div class="container">
+					<div class="row">
+						{{#each data}}
+						<div class="col-50">
+							<div class="content">
+								{{#if this.link_batik}}
+								<img src="{{this.link_batik}}" alt="" referrerpolicy="no-referrer" style="max-height: 100px;">
+								{{else}}
+								<img src="static/images/bookmark1.jpg" alt="" referrerpolicy="no-referrer" style="max-height: 100px;">
+								{{/if}}
+								<a class="single-product" href="/product-details/{{this.id}}/" @click="singleProduct" data-terendah="'{{this.harga_rendah}}'" data-tertinggi="'{{this.harga_tinggi}}'" data-id="'{{this.id}}'" data-gambar="'{{this.link_batik}}'" data-daerah="'{{this.daerah_batik}}'" data-makna="'{{this.makna_batik}}'" data-nama="'{{this.nama_batik}}'"><p>{{this.nama_batik}}</p></a>
+								<h5>Rp. {{this.harga_tinggi.toLocaleString("en-US")}}</h5>
+								<br>
+							</div>
+						</div>
+						{{/each}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+<script>
+	export default{
+		mounted() {
+			var $this = this;
+			var app = this.$app;
+			var $$ = this.$$;
+			var self = this;
+		},
+		methods: {
+			singleProduct: function(e) {
+				var $this = this;
+				var app = this.$app;
+				var $$ = this.$$;
+				var self = this;
+				localStorage.setItem('terendah', $$(e.path[1]).data("terendah"));
+				localStorage.setItem('tertinggi', $$(e.path[1]).data("tertinggi"));
+				localStorage.setItem('id', $$(e.path[1]).data("id"));
+				localStorage.setItem('gambar', $$(e.path[1]).data("gambar"));
+				localStorage.setItem('daerah', $$(e.path[1]).data("daerah"));
+				localStorage.setItem('makna', $$(e.path[1]).data("makna"));
+				localStorage.setItem('nama', $$(e.path[1]).data("nama"));
+				console.log(e);
+			},
+		},
+		on: {
+			pageInit: function () {
+				var self = this;
+				var $this = this;
+				var app = this.$app;
+				var $$ = this.$$;
+				app.request.get('http://batikita.herokuapp.com/index.php/batik/all', (response) => {
+					var items = [];
+					var dataJSON = new Array();
+					dataJSON = JSON.parse(response);
+					var item = dataJSON.hasil;
+					for(var i = 0; i < item.length; i++) {
+						var tampil = item[i];
+						var harga_rendah = tampil.harga_rendah;
+						var harga_tinggi = tampil.harga_tinggi;
+						var hitung_view = tampil.hitung_view;
+						var id = tampil.id;
+						var link_batik = tampil.link_batik;
+						if(tampil.daerah_batik != null) {
+							var daerah_batik = tampil.daerah_batik.replace(/['"()]/g, "");
+						}else {
+							var daerah_batik = "-";	
+						}
+						if(tampil.makna_batik != null) {
+							var makna_batik = tampil.makna_batik.replace(/['"()]/g, "");
+						}else {
+							var makna_batik = "-";	
+						}
+						if(tampil.nama_batik != null) {
+							var nama_batik = tampil.nama_batik.replace(/['"()]/g, "");
+						}else {
+							var nama_batik = "-";	
+						}
+						items.push({
+							id: id,
+							nama_batik: nama_batik,
+							makna_batik: makna_batik,
+							daerah_batik: daerah_batik,
+							harga_rendah: harga_rendah,
+							harga_tinggi: harga_tinggi,
+							hitung_view: hitung_view,
+							link_batik: link_batik
+						});
+					}
+					console.log(items);
+					self.$setState({
+						data: items
+					});
+				});
+			},
+		},
+	}
+</script>

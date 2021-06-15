@@ -1,0 +1,81 @@
+<template>
+	<div class="page">
+		<div class="navbar">
+			<div class="navbar-inner sliding navbar-pages">
+				<div class="left">
+					<a href="#" class="link back">
+						<i class="fa fa-arrow-left"></i>
+					</a>
+				</div>
+				{{#if data}}
+				<div class="title"><h4>{{myNama}}</h4></div>
+				{{else}}
+				{{/if}}
+			</div>
+		</div>
+		{{#if data}}
+		<div class="page-content">
+			<div class="segments-page">
+				<div class="container">
+					<div class="product-details">
+						<div class="contents">
+							<img src="{{myGambar}}" alt="">
+							<div class="desc-short">
+								<h4>{{myNama}}</h4>
+								<h5>Rp. {{myTertinggi.toLocaleString("en-US")}}</h5>
+								<p>Harga Terendah : Rp. {{myTerendah.toLocaleString("en-US")}}</p>
+								<p>Asal Batik : {{myDaerah}}</p>
+							</div>
+							<div class="desc-long">
+								<h5>Makna Batik</h5>
+								<p>{{myMakna}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{else}}
+		{{/if}}
+	</div>
+</template>
+<script>
+	export default {
+		mounted() {
+			var $this = this;
+			var app = this.$app;
+			var $$ = this.$$;
+			var self = this;
+		},
+		on: {
+			pageInit: function () {
+				var self = this;
+				var $this = this;
+				var app = this.$app;
+				var $$ = this.$$;
+				var dataJSON = new Array();
+				app.request.get('http://batikita.herokuapp.com/index.php/batik/popular', (response) => {
+					dataJSON = JSON.parse(response);
+					var terendah = localStorage.getItem('terendah').split("'").join("");
+					var tertinggi = localStorage.getItem('tertinggi').split("'").join("");
+					var id = localStorage.getItem('id').split("'").join("");
+					var gambar = localStorage.getItem('gambar').split("'").join("");
+					var daerah = localStorage.getItem('daerah').split("'").join("");
+					var makna = localStorage.getItem('makna').split("'").join("");
+					var nama = localStorage.getItem('nama').split("'").join("");
+					console.log(dataJSON);
+					self.$setState({
+						data: "Hello",
+						myTerendah: parseInt(terendah),
+						myTertinggi: parseInt(tertinggi),
+						myId: id,
+						myGambar: gambar,
+						myDaerah: daerah,
+						myMakna: makna,
+						myNama: nama
+					});
+				});
+			},
+		},
+	}
+</script>

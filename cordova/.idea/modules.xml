@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/platforms/android/CordovaLib/CordovaLib.iml" filepath="$PROJECT_DIR$/platforms/android/CordovaLib/CordovaLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platforms/android/app/src/app.iml" filepath="$PROJECT_DIR$/platforms/android/app/src/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platforms/android/CordovaLib/build/build.iml" filepath="$PROJECT_DIR$/platforms/android/CordovaLib/build/build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platforms/android/app/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/bundle-manifest.iml" filepath="$PROJECT_DIR$/platforms/android/app/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/bundle-manifest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/cordova-plugin-keyboard/cordova-plugin-keyboard.iml" filepath="$PROJECT_DIR$/plugins/cordova-plugin-keyboard/cordova-plugin-keyboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/cordova-plugin-splashscreen/cordova-plugin-splashscreen.iml" filepath="$PROJECT_DIR$/plugins/cordova-plugin-splashscreen/cordova-plugin-splashscreen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/cordova-plugin-statusbar/cordova-plugin-statusbar.iml" filepath="$PROJECT_DIR$/plugins/cordova-plugin-statusbar/cordova-plugin-statusbar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/cordova-plugin-whitelist/src/cordova-plugin-whitelist.iml" filepath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/src/cordova-plugin-whitelist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platforms/android/app/build/intermediates/merged_manifests/debug/debug.iml" filepath="$PROJECT_DIR$/platforms/android/app/build/intermediates/merged_manifests/debug/debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platforms/android/app/build/generated/source/generated.iml" filepath="$PROJECT_DIR$/platforms/android/app/build/generated/source/generated.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platforms/android/app/build/intermediates/instant_app_manifest/debug/processDebugManifest/instant-app-manifest/instant-app-manifest.iml" filepath="$PROJECT_DIR$/platforms/android/app/build/intermediates/instant_app_manifest/debug/processDebugManifest/instant-app-manifest/instant-app-manifest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platforms/android/app/build/generated/not_namespaced_r_class_sources/not_namespaced_r_class_sources.iml" filepath="$PROJECT_DIR$/platforms/android/app/build/generated/not_namespaced_r_class_sources/not_namespaced_r_class_sources.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/cordova-plugin-whitelist/tests/tests.iml" filepath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/tests/tests.iml" />
+    </modules>
+  </component>
+</project>
