@@ -20,7 +20,7 @@ var app = new Framework7({
   component: App, // App main component
   id: 'io.framework7.myapp', // App bundle ID
   name: 'Bainart App', // App name
-  theme: 'android', // Automatic theme detection
+  theme: 'ios', // Automatic theme detection
 
 
 
