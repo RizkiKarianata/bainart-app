@@ -4,7 +4,7 @@
     "web",
     "cordova"
   ],
-  "name": "MyBatik",
+  "name": "Bainart App",
   "framework": "core",
   "template": "tabs",
   "bundler": "webpack",
